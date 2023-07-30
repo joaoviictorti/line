@@ -24,7 +24,7 @@
 
 O line é uma ferramenta que tem o objetivo de realizar o parse de várias linhas. É uma excelente opção para ser utilizada em testes de penetração no reconhecimento de aplicações e também em atividades do dia a dia.
 
-Projetei o `line` e mantive um modelo consistentemente passivo para torná-lo útil para testadores de penetração.
+Projetei o `line` e mantive um modelo consistentemente passivo para torná-lo útil para pentest e profissionais de TI.
 
 # Características
 
