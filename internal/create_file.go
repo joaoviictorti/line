@@ -2,6 +2,7 @@ package internal
 
 import (
 	"bufio"
+	"fmt"
 	"os"
 
 	"github.com/joaoviictorti/line/internal/utils"
@@ -10,7 +11,8 @@ import (
 func CreateFile(file string, lista []string) {
 	filename, err := os.OpenFile(file, os.O_RDWR|os.O_CREATE|os.O_APPEND, 0666)
 	if err != nil {
-		utils.ErroFile()
+		err := utils.ErroFile()
+		fmt.Println(err)
 	}
 	defer filename.Close()
 	scanner := bufio.NewScanner(filename)
@@ -23,7 +25,8 @@ func CreateFile(file string, lista []string) {
 		if _, exists := linesInFile[linha]; !exists {
 			_, err := filename.WriteString(linha + "\n")
 			if err != nil {
-				utils.WriteFile()
+				err := utils.WriteFile()
+				fmt.Println(err)
 			}
 		}
 	}
