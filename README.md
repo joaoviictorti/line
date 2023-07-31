@@ -35,8 +35,24 @@ Projetei o `line` e mantive um modelo consistentemente passivo para torná-lo ú
 
 # Forma de utilização
 
+- Enviando o output para um arquivo
 ```sh
-cat urls.txt | line parse_urls.txt
+cat urls.txt | line -f parse_urls.txt
+```
+
+- Ignorando case-sensitive
+```sh
+cat urls.txt | line -if parse_urls.txt
+```
+
+- Removendo linhas vazias
+```sh
+cat urls.txt | line -ef parse_urls.txt
+```
+
+- Pode usar todas as flags agrupadas
+```sh
+cat urls.txt | line -stif parse_urls.txt
 ```
 
 # Detalhes
