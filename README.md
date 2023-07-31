@@ -50,7 +50,7 @@ cat urls.txt | line -if parse_urls.txt
 cat urls.txt | line -ef parse_urls.txt
 ```
 
-- Pode usar todas as flags agrupadas
+- Usando todas as flags agrupadas
 ```sh
 cat urls.txt | line -stif parse_urls.txt
 ```
