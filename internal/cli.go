@@ -49,7 +49,7 @@ func Argumentos() {
 	f := parser.String(
 		"f",
 		"file",
-		&argparse.Options{Help: "Inser File", Default: ""},
+		&argparse.Options{Help: "Insert File", Default: ""},
 	)
 
 	err := parser.Parse(os.Args)
