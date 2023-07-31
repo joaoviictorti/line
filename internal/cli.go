@@ -1,11 +1,13 @@
 package internal
 
 import (
-	"flag"
 	"fmt"
+	"os"
+
+	"github.com/akamensky/argparse"
 )
 
-func Banner() {
+func Banner() string {
 	banner := `         
 	 _     _  _      _____
 	/ \   / \/ \  /|/  __/
@@ -13,57 +15,55 @@ func Banner() {
 	| |_/\| || | \|||  /_ 
 	\____/\_/\_/  \|\____\											  
 	`
-	fmt.Println(banner)
+	return banner
 }
 
 func Argumentos() {
-	var s bool
-	var i bool
-	var e bool
-	var t bool
 
-	flag.Usage = func() {
-		Banner()
-		flag.PrintDefaults()
+	parser := argparse.NewParser("line", Banner())
+
+	s := parser.Flag(
+		"s",
+		"silent",
+		&argparse.Options{Help: "Send to or file, to disable or stdout", Default: false},
+	)
+
+	i := parser.Flag(
+		"i",
+		"ignored",
+		&argparse.Options{Help: "Ignored case sensitive", Default: false},
+	)
+
+	e := parser.Flag(
+		"e",
+		"empty",
+		&argparse.Options{Help: "Remove empty lines", Default: false},
+	)
+
+	t := parser.Flag(
+		"t",
+		"trim",
+		&argparse.Options{Help: "Remove spaces between lines", Default: false},
+	)
+
+	f := parser.String(
+		"f",
+		"file",
+		&argparse.Options{Help: "Inser File", Default: ""},
+	)
+
+	err := parser.Parse(os.Args)
+	if err != nil {
+		fmt.Println(parser.Usage(err))
+		return
 	}
 
-	flag.BoolVar(
-		&s,
-		"s",
-		false,
-		"Send to or file, to disable or stdout",
-	)
-
-	flag.BoolVar(
-		&i,
-		"i",
-		false,
-		"Ignored case sensitive",
-	)
-
-	flag.BoolVar(
-		&e,
-		"e",
-		false,
-		"Remove empty lines",
-	)
-
-	flag.BoolVar(
-		&t,
-		"t",
-		false,
-		"Remove spaces between lines",
-	)
-
-	flag.Parse()
-	file := flag.Arg(0)
-
 	dados := Functions{
-		sensitive: i,
-		silent:    s,
-		file:      file,
-		empty:     e,
-		trim:      t,
+		Ignored: *i,
+		Silent:  *s,
+		File:    *f,
+		Empty:   *e,
+		Trim:    *t,
 	}
 
 	dados.Duplicate()

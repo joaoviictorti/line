@@ -8,25 +8,25 @@ import (
 )
 
 type Functions struct {
-	silent    bool
-	file      string
-	sensitive bool
-	empty     bool
-	trim      bool
+	Ignored bool
+	Silent  bool
+	File    string
+	Empty   bool
+	Trim    bool
 }
 
 func (l Functions) Duplicate() {
 	scanner := bufio.NewScanner(os.Stdin)
 	lista := []string{}
 	for scanner.Scan() {
-		linha := map[bool]string{true: scanner.Text(), false: strings.ToLower(scanner.Text())}[l.sensitive]
+		linha := map[bool]string{true: scanner.Text(), false: strings.ToLower(scanner.Text())}[l.Ignored]
 		linha = l.processLine(linha)
-		if l.empty && linha == "" {
+		if l.Empty && linha == "" {
 			continue
 		}
 		if !l.isDuplicate(linha, lista) {
 			lista = append(lista, linha)
-			switch l.silent {
+			switch l.Silent {
 			case false:
 				fmt.Println(linha)
 			case true:
@@ -34,8 +34,8 @@ func (l Functions) Duplicate() {
 			}
 		}
 	}
-	if l.file != "" {
-		CreateFile(l.file, lista)
+	if l.File != "" {
+		CreateFile(l.File, lista)
 	}
 }
 
@@ -49,7 +49,7 @@ func (l Functions) isDuplicate(linha string, array []string) bool {
 }
 
 func (l Functions) processLine(line string) string {
-	if l.trim {
+	if l.Trim {
 		line = strings.TrimSpace(line)
 	}
 	return line
