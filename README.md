@@ -41,7 +41,7 @@ cat urls.txt | line parse_urls.txt
 
 # Detalhes
 
-![line](/img/help.png)
+![line](/img/help_line.png)
 
 
 # Instalação
