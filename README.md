@@ -1,30 +1,22 @@
-<img width=100% src="https://capsule-render.vercel.app/api?type=waving&color=0000FF&height=120&section=header"/>
-
-![hunteheader](/img/line.png)
-
-<p align="center">
-	<a href="https://www.python.org/"><img src="https://img.shields.io/badge/made%20with-go-blue"></a>
+# line
+line parse duplicate information
+<p align="left">
+	<a href="https://go.dev/"><img src="https://img.shields.io/badge/made%20with-go-blue"></a>
 	<a href="#"><img src="https://img.shields.io/badge/platform-osx%2Flinux%2Fwindows-blueviolet"></a>
 	<a href="https://github.com/joaoviictorti/line/releases"><img src="https://img.shields.io/github/release/joaoviictorti/line?color=blue"></a>
 </p>
 
-<h4 align="center">line parse duplicate information</h4>
+![line](/img/line.png)
 
+line is a tool that aims to parse multiple lines. It is an excellent option to be used in penetration testing for application recognition and also in day-to-day activities. I designed `line` and maintained a consistently passive model to make it useful for pentest and IT professionals.
 
-<p align="center">
-  <a href="#features">Features</a> •
-  <a href="#installation">Installation</a> •
-  <a href="#how-to-use"> How to use</a> •
-  <a href="#details">Details</a> •
-  <a href="#running-line">Running line</a>  
-</p>
+- [Installation](#installation)
+- [features](#features)
+- [Usage](#usage)
+- [Details](#details)
+- [Running line](#running-line)
 
 ---
-
-
-line is a tool that aims to parse multiple lines. It is an excellent option to be used in penetration testing for application recognition and also in day-to-day activities.
-
-I designed `line` and maintained a consistently passive model to make it useful for pentest and IT professionals.
 
 # Features
 
@@ -33,8 +25,7 @@ I designed `line` and maintained a consistently passive model to make it useful 
 - Remove empty lines
 - Ignores case sensitivity
 
-# How to use
-
+# Usage
 - Sending the output to a file
 ```sh
 cat urls.txt | line -f parse_urls.txt
