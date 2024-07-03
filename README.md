@@ -64,4 +64,3 @@ go install -v github.com/joaoviictorti/line/cmd/line@latest
 ![line](/img/exec.png)
 
 
-<img width=100% src="https://capsule-render.vercel.app/api?type=waving&color=0000FF&height=120&section=footer"/>
