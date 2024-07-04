@@ -3,7 +3,6 @@ line parse duplicate information
 <p align="left">
 	<a href="https://go.dev/"><img src="https://img.shields.io/badge/made%20with-go-blue"></a>
 	<a href="#"><img src="https://img.shields.io/badge/platform-osx%2Flinux%2Fwindows-blueviolet"></a>
-	<a href="https://github.com/joaoviictorti/line/releases"><img src="https://img.shields.io/github/release/joaoviictorti/line?color=blue"></a>
 </p>
 
 ![line](/img/line.png)
